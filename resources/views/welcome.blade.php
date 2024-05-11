@@ -8,7 +8,7 @@
     <title>Document</title>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body id="app">
+<body id="app" class="mx-auto container mt-10">
     <increment-counter />
 </body>
 </html>
