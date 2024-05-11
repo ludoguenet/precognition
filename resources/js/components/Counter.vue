@@ -5,9 +5,7 @@
                 <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
                 <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful what you share.</p>
 
-                <pre>
-           {{form.avatar}}
-                </pre>
+                <pre>{{ form }}</pre>
 
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
@@ -102,5 +100,7 @@ const submitForm = () => axios.post('/api/users/store', {
     name: form.value.name,
     email: form.value.email,
     avatar: form.value.avatar,
-}, config);
+}, config)
+.then((res) => console.log(res))
+.catch((e) => console.log(e));
 </script>
