@@ -1,7 +1,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import IncrementCounter from './components/Counter.vue';
+import StoreUser from './components/StoreUser.vue';
 
 createApp({})
-    .component('IncrementCounter', IncrementCounter)
+    .component('StoreUser', StoreUser)
     .mount('#app')

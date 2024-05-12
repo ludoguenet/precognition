@@ -4,20 +4,15 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
 
 final class StoreUserController extends Controller
 {
     public function __invoke(
-        Request $request,
+        StoreUserRequest $request,
     ) {
-        $validated = $request->validate(
-            [
-                'name' => 'required|string',
-                'email' => 'required|email',
-                'avatar' => 'nullable|mimes:jpeg,jpg,png,gif,svg|max:10000',
-            ],
-        );
+        $validated = $request->validated();
 
         $validated['avatar']->store('public/avatars');
 
